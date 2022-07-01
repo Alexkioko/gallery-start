@@ -10,25 +10,25 @@ for (let i = 1; i <= 5; i++) {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', `images/pic${i}.jpg`);
     thumbBar.appendChild(newImage);
-    //Add the event directly
+    //Add the event directly 
     newImage.addEventListener('click', function() {
         displayedImage.setAttribute('src', newImage.getAttribute('src'));
-    });
+    }); 
 }
-/*using for each
+/*using forEach
 document.querySelectorAll('.thumb-bar>img').forEach(function(img) {
     img.onclick = function() {
         displayedImage.setAttribute('src', img.getAttribute('src'));
     }
 }); 
 
-/* using a for loop 
+/* using a for loop  
 const imgs = document.querySelectorAll('.thumb-bar>img');
 for (let i = 0; i < imgs.length; i++) {
     imgs[i].addEventListener('click', function() {
         displayedImage.setAttribute('src', imgs[i].getAttribute('src'));
     });
-}*/
+}
 /* using delegation 
 thumbBar.addEventListener('click', function(e) {
     if (e.target && e.target.nodeName == 'IMG') {
